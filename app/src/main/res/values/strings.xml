@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">Who\'s The CEO</string>
+    <string name="name_string">CEO QUIZ</string>
+    <string name="enterName_string">Please enter your name</string>
+    <string name="hint_string">Name</string>
+    <string name="btn_string">START</string>
+</resources>
