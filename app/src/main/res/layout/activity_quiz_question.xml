@@ -1,9 +1,128 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:fillViewport="true"
     tools:context=".QuizQuestionActivity">
 
-</androidx.constraintlayout.widget.ConstraintLayout>
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:padding="16dp" >
+
+        <TextView
+            android:id="@+id/question_text_view"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:gravity="center"
+            android:textSize="36sp"
+            android:textColor="@color/black"
+            android:text="CEO NAME"
+            android:fontFamily="sans-serif" />
+
+        <ImageView
+            android:id="@+id/image"
+            android:layout_width="wrap_content"
+            android:layout_height="160dp"
+            android:layout_marginTop="16dp"
+            android:gravity="center"
+            android:src="@drawable/cred_" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:orientation="horizontal"
+            android:layout_marginTop="16dp"
+            android:gravity="center_vertical">
+
+        <ProgressBar
+            android:id="@+id/progress_bar"
+            style="?android:attr/progressBarStyleHorizontal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:max="10"
+            android:minHeight="50dp"
+            android:progress="0"
+            android:indeterminate="false"/>
+
+        <TextView
+            android:id="@+id/progress_tv"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textColorHint="@color/black"
+            android:text="0/10"
+            android:textSize="16sp"
+            android:textColor="@color/black" />
+
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/option1_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/default_border__bg"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            tools:text="Sundar Picaho"/>
+
+        <TextView
+            android:id="@+id/option2_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/default_border__bg"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            tools:text="SundarTrivarr"/>
+
+        <TextView
+            android:id="@+id/option3_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/default_border__bg"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            tools:text="Nauolo Picaho"/>
+
+        <TextView
+            android:id="@+id/option4_tv"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="10dp"
+            android:background="@drawable/default_border__bg"
+            android:gravity="center"
+            android:padding="16dp"
+            android:textSize="18sp"
+            android:textColor="@color/black"
+            tools:text="SLie Chan"/>
+
+        <Button
+            android:id="@+id/submit_btn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_margin="16dp"
+            android:background="@color/colorPrimary"
+            android:text="Submit"
+            android:textColor="@color/white"
+            android:textSize="18sp"
+            android:textStyle="bold" />
+
+
+    </LinearLayout>
+
+</ScrollView>

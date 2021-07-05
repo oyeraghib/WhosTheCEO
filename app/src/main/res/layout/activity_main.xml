@@ -9,13 +9,6 @@
     android:background="@drawable/bg"
      tools:context=".MainActivity">
 
-    <Button
-        android:id="@+id/button1"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="button1" />
-
-
     <TextView
         android:id="@+id/name_text"
         android:text="@string/name_string"

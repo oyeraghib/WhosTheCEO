@@ -14,8 +14,8 @@ object Constants {
             R.drawable.bg,
             "Bill Gates",
             "Satya Nadella",
-            "Picasso",
-            "Jeff Bezos",
+            "Jimmy Rock",
+            "Buzaak",
             4
         )
         questionList.add(que1)
