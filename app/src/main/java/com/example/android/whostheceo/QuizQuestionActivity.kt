@@ -22,7 +22,7 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_question)
 
-        val mQuestionList = Constants.getQuestion()
+        mQuestionList = Constants.getQuestion()
         setQuestions()
 
         option1_tv.setOnClickListener(this)
