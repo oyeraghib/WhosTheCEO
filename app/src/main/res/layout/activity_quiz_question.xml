@@ -21,7 +21,7 @@
             android:layout_margin="10dp"
             android:gravity="center"
             android:textSize="36sp"
-            android:textColor="@color/black"
+            android:textColor="@color/white"
             android:text="CEO NAME"
             android:fontFamily="sans-serif" />
 
