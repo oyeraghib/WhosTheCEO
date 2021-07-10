@@ -1,5 +1,6 @@
 package com.example.android.whostheceo
 
+import android.content.Intent
 import android.graphics.Color
 import android.graphics.Typeface
 import androidx.appcompat.app.AppCompatActivity
@@ -9,6 +10,7 @@ import android.view.View
 import android.widget.TextView
 import android.widget.Toast
 import androidx.core.content.ContextCompat
+import kotlinx.android.synthetic.main.activity_main.*
 import kotlinx.android.synthetic.main.activity_quiz_question.*
 import kotlinx.android.synthetic.main.activity_quiz_question.view.*
 
@@ -17,11 +19,17 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
 
     private var mCurrentPosition: Int = 1
     private var mQuestionList: ArrayList<Question>? = null
-            private var mSelectedOptionPosition: Int = 0
+    private var mSelectedOptionPosition: Int = 0
+    private var mCorrectAnswers: Int = 0
+
+    private var mUsername: String? = null
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_quiz_question)
+
+        mUsername = intent.getStringExtra(Constants.USER_NAME)
 
         mQuestionList = Constants.getQuestion()
         setQuestions()
@@ -93,25 +101,32 @@ class QuizQuestionActivity : AppCompatActivity(), View.OnClickListener {
 
                     when {
                         mCurrentPosition <= mQuestionList!!.size -> setQuestions()
-                        else -> Toast.makeText(
-                            this, "Quiz is Finished",
-                            Toast.LENGTH_SHORT
-                        ).show()
+                        else -> {
+                            val intent = Intent(this, ResultActivity::class.java)
+                            intent.putExtra(Constants.USER_NAME, mUsername)
+                            intent.putExtra(Constants.CORRECT_ANSWERS, mCorrectAnswers)
+                            intent.putExtra(Constants.TOTAL_QUESTIONS, mQuestionList!!.size)
+                            startActivity(intent)
+                        }
                     }
                 }
                 else{
                         val question = mQuestionList?.get(mCurrentPosition - 1)
                     if(question!!.correctAnswer != mSelectedOptionPosition){
                         answerView(mSelectedOptionPosition, R.drawable.wrong_border__bg )
+                    } else {
+                        mCorrectAnswers++
                     }
                     answerView(question.correctAnswer, R.drawable.correct_border__bg)
 
                     if(mCurrentPosition == mQuestionList!!.size){
                         submit_btn.text = "FINISH"
+
                     } else {
                         submit_btn.text = "GOTO NEXT QUESTION"
                     }
                         mSelectedOptionPosition = 0
+                    mCurrentPosition++
             }
 
         }

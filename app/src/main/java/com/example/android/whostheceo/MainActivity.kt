@@ -23,12 +23,16 @@ class MainActivity : AppCompatActivity() {
         val startBtn = findViewById<Button>(R.id.start_btn)
         val nameEditText = findViewById<TextView>(R.id.name_edit_text)
 
+
+
+
         startBtn.setOnClickListener {
 
             if(nameEditText.text.toString().isEmpty()) {
                         Toast.makeText(this, "Enter name", Toast.LENGTH_SHORT).show()
                     } else {
                 val Intent = Intent(this, QuizQuestionActivity::class.java)
+                intent.putExtra(Constants.USER_NAME, name_edit_text.text.toString())
                 startActivity(Intent)
 
             }
